@@ -1,0 +1,216 @@
+/* ページ全体の余白と背景色を設定する */
+body {
+    margin: 0;
+    background-color: #090c20;
+    font-family: "Yu Gothic", Meiryo, sans-serif;
+}
+
+/* ゲーム画面を中央に配置する */
+.game {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    aspect-ratio: 4 / 3;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
+    background-color: #11132a;
+    box-shadow: 0 0 20px #333b92;
+}
+
+/* 背景画像とアバター画像をゲーム画面のサイズに合わせる */
+.background-image,
+.avatar-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* 両方のHPに共通する文字デザイン */
+.hp {
+    position: absolute;
+    top: 41.5%;
+    width: 13%;
+    height: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ff526d;
+    font-size: 22px;
+    font-weight: bold;
+    white-space: nowrap;
+    text-shadow: 0 0 5px #ff5272;
+}
+
+/* CPUのHPの位置 */
+.cpu-hp {
+    left: 11.5%;
+}
+
+/* あなたのHPの位置 */
+.player-hp {
+    right: 6.0%;
+}
+
+/* CPUとあなたが出した手の共通デザイン */
+.hand {
+    position: absolute;
+    top: 33.0%;
+    width: 9%;
+    height: 12%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #c1c2d0;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+/* CPUの手の位置 */
+.cpu-hand {
+    left: 32.0%;
+}
+
+/* あなたの手の位置 */
+.player-hand {
+    left: 59.0%;
+}
+
+/* じゃんけんの手の画像サイズ */
+.hand img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* グー・チョキ・パーの画像ボタンに共通する設定 */
+.choice {
+    position: absolute;
+    top: 55.0%;
+    width: 23%;
+    height: 12%;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    transition: transform 0.15s, filter 0.15s;
+}
+
+/* 選択ボタンの中の画像 */
+.choice img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* グーボタンの位置 */
+.gu {
+    left: 15%;
+}
+
+/* チョキボタンの位置 */
+.choki {
+    left: 38.5%;
+}
+
+/* パーボタンの位置 */
+.pa {
+    left: 62%;
+}
+
+/* マウスを乗せると光る */
+.choice:hover {
+    filter: drop-shadow(0 0 9px #74eaff);
+}
+
+/* 押している間は少し小さくなる */
+.choice:active {
+    transform: scale(0.9);
+}
+
+/* 一回ごとの勝敗メッセージ */
+.round-result {
+    position: absolute;
+    top: 73%;
+    left: 23%;
+    width: 54%;
+    margin: 0;
+    color: #ffe6a2;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 0 0 7px #d48d32;
+    -webkit-text-stroke: 0.5px #5c3719;
+}
+
+/* 最終的な勝利と敗北に共通する文字デザイン */
+.final-result-text {
+    display: none;
+    position: absolute;
+    top: 70%;
+    left: 24%;
+    width: 54%;
+    margin: 0;
+    color: #fff491;
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 0 0 8px #f7edff;
+}
+
+/* リトライの画像ボタン */
+.retry {
+    display: none;
+    position: absolute;
+    top: 84%;
+    left: 35%;
+    width: 30%;
+    height: 10%;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    transition: transform 0.15s, filter 0.15s;
+}
+
+/* リトライボタンの画像 */
+.retry img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
+
+/* リトライにマウスを乗せると光る */
+.retry:hover {
+    filter: drop-shadow(0 0 9px #74eaff);
+}
+
+/* リトライを押している間は小さくなる */
+.retry:active {
+    transform: scale(0.9);
+}
+
+/* 決着後はじゃんけんボタンを押せないようにする */
+.choice:disabled {
+    cursor: default;
+}
+
+/* 小さい画面では文字を小さくする */
+@media (max-width: 600px) {
+    .hp {
+        font-size: 4vw;
+    }
+
+    .round-result {
+        font-size: 4vw;
+    }
+
+    .final-result-text {
+        font-size: 4vw;
+    }
+}
