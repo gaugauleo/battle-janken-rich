@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        バトルじゃんけん
+    </title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="game">
+        <!-- アバターのない背景画像 -->
+        <img
+            class="background-image"
+            src="images/back.png"
+            alt="バトルじゃんけんの背景"
+        >
+
+        <!-- 透明なアバター画像を背景と同じ大きさで重ねる -->
+        <img
+            id="cpu_avatar"
+            class="avatar-image"
+            src="images/cpu-1.png"
+            alt="CPUのアバター"
+        >
+        <img
+            id="player_avatar"
+            class="avatar-image"
+            src="images/anata-1.png"
+            alt="あなたのアバター"
+        >
+
+        <!-- CPUのHP、ハートはJavaScriptで変更する -->
+        <div id="cpu_hp" class="hp cpu-hp">
+            ♥ ♥ ♥
+        </div>
+
+        <!-- あなたのHP -->
+        <div id="player_hp" class="hp player-hp">
+            ♥ ♥ ♥
+        </div>
+
+        <!-- CPUが出した手を表示する -->
+        <div id="cpu_hand" class="hand cpu-hand">
+            ?
+        </div>
+
+        <!-- あなたが出した手を表示する -->
+        <div id="player_hand" class="hand player-hand">
+            ?
+        </div>
+
+        <!-- グーの画像ボタン -->
+        <button id="gu_btn" class="choice gu" type="button">
+            <img
+                src="images/gu.png"
+                alt="グー"
+            >
+        </button>
+
+        <!-- チョキの画像ボタン -->
+        <button id="choki_btn" class="choice choki" type="button">
+            <img
+                src="images/choki.png"
+                alt="チョキ"
+            >
+        </button>
+
+        <!-- パーの画像ボタン -->
+        <button id="pa_btn" class="choice pa" type="button">
+            <img
+                src="images/pa.png"
+                alt="パー"
+            >
+        </button>
+
+        <!-- 一回ごとの勝ち・負け・あいこを表示する -->
+        <p id="round_result" class="round-result">
+            いざ勝負！
+        </p>
+
+        <!-- 最終的な勝利文字、最初は表示しない -->
+        <p id="result_win" class="final-result-text">
+            大勝利！
+        </p>
+
+        <!-- 最終的な敗北文字、最初は表示しない -->
+        <p id="result_lose" class="final-result-text">
+            敗北…
+        </p>
+
+        <!-- 決着後だけ表示するリトライ画像 -->
+        <button id="retry_btn" class="retry" type="button">
+            <img
+                src="images/retry.png"
+                alt="リトライ"
+            >
+        </button>
+    </main>
+
+    <!-- jQueryを先に読み込む -->
+    <script src="jquery-2.1.3.min.js"></script>
+
+    <!-- 自分で書いたJavaScriptを読み込む -->
+    <script src="script.js"></script>
+</body>
+</html>
